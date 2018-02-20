@@ -4,7 +4,6 @@ import * as firebase from 'firebase';
 import { Root, Tabs } from '../config/router';
 import { Input } from '../components/Input';
 import { Button } from '../components/Button';
-import LinearGradient from 'react-native-linear-gradient';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -73,9 +72,7 @@ export default class Login extends React.Component {
     }
     return (
       <View style={styles.form}>
-      <LinearGradient
-        colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}
-      >
+      <Text style={styles.loginText}>LOGIN</Text>
         <Input 
           placeholder='Enter your email...'
           label='Email'
@@ -91,9 +88,7 @@ export default class Login extends React.Component {
         <Text>{this.state.error}</Text>
         <Button onPress={() => this.onPressSignIn()}>Log In</Button>
         <Button onPress={() => this.onPressSignUp()}>Sign Up</Button>
-        </LinearGradient>
       </View>
-      
     )
   }
   
@@ -124,5 +119,11 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     borderRadius: 5
+  },
+  loginText: {
+      fontSize: 34,
+      color: '#2CEB73',
+      textAlign: 'center',
+      marginBottom: 20,
   }
 })

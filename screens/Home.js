@@ -25,8 +25,8 @@ class Feed extends Component {
         }
       }
 
-      onDetailChallenge = () => {
-          this.props.navigation.navigate('ChallengeDetails');
+      onDetailChallenge = (challenges) => {
+          this.props.navigation.navigate('ChallengeDetails', {...challenges});
       }
     
       componentDidMount() {
@@ -42,15 +42,17 @@ class Feed extends Component {
                 <ProgressBar/>
             </View> :
           <View> 
+              
           <FlatList 
             data={this.state.data}
             renderItem={({ item: rowData }) =>{
               return(
+                
                 <Card
                   title={null}
                   containerStyle={styles.card}
                 >
-                <TouchableOpacity onPress={() => this.onDetailChallenge()}>
+                <TouchableOpacity onPress={() => this.onDetailChallenge(challenges)}>
                 <Text style={styles.titleText}>{rowData.title}</Text>
                 <View style={styles.coinContainer}>
                 <Image source={require("../assets/img/coin.png")} />
@@ -58,6 +60,7 @@ class Feed extends Component {
                 </View>
                 </TouchableOpacity>
                 </Card>
+                
               )
             }}
             keyExtractor={(item, index) => index}

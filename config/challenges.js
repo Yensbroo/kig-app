@@ -1,4 +1,4 @@
-export const challenges = [
+export const challenges =  [
         {
             "id": 0,
             "title": "Fairtrade",
@@ -46,34 +46,34 @@ export const challenges = [
             "title": "Doggystile",
             "descr": "Challenge om wekelijks met een asiel hondje te gaan wandelen",
             "coins": "50",
-            "category": ""
+            "category": "karma"
         },
         {
             "id": 7,
             "title": "Giving Back",
             "descr": "Doneer de spullen die je niet meer gebruikt aan de kring.",
             "coins": "20",
-            "category": ""
+            "category": "karma"
         },
         {
             "id": 8,
-            "title": "Tournéé Minérale",
+            "title": "Tornéé Minérale",
             "descr": "Consumeer een maand lang geen alcohol",
             "coins": "100",
-            "category": ""
+            "category": "food/waste"
         },
         {
             "id": 9,
             "title": "40 dagen zonder vless",
             "descr": "Eet 40 dagen geen vlees te eten.",
             "coins": "",
-            "category": ""
+            "category": "food/waste"
         },
         {
             "id": 10,
             "title": "Samaritaan",
             "descr": "Doneer een bedrag naar keuzen aan een duurzame ngo.",
-            "coins": "",
+            "coins": "25",
             "category": "karma"
         },
         {

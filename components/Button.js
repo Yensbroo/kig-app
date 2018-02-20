@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import LinearGradient from 'react-native-web-linear-gradient';
 
 const Button = ({ onPress, children}) => {
     return (
@@ -12,9 +13,9 @@ const Button = ({ onPress, children}) => {
 const styles = StyleSheet.create({
     button: {
         marginTop: 10,
-        padding: 20,
+        padding: 10,
         width: '100%',
-        backgroundColor: '#00AEEF',
+        backgroundColor: '#2CEB73',
         borderRadius: 4,
         alignItems: 'center',
     },
