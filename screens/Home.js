@@ -12,28 +12,68 @@ import {
 import { List, ListItem, Card } from 'react-native-elements';
 import { challenges } from '../config/challenges';
 import ProgressBar from '../components/progressBar';
+import { firebaseInit } from '../config/firebaseconfig';
 
 class Feed extends Component {
     constructor(props) {
         super(props);
+        this.challengesRef = firebaseInit.database().ref();
         const ds = new ListView.DataSource({
           rowHasChanged: (r1, r2) => r1 !== r2
         });
         this.state = {
           isLoading: true,
-          data: challenges
+          challenges: {}
         }
       }
 
       onDetailChallenge = (challenges) => {
           this.props.navigation.navigate('ChallengeDetails', {...challenges});
       }
+
+      componentWillMount() {
+        this.getChallenges();
+      }
+
+      getChallenges = () => {
+        const challenges = [];
+
+        firebaseInit.database().ref('challenges').on('value', (snap) => {
+          snap.forEach((child) => {
+            challenges.push({
+              title: child.val().title,
+              coins: child.val().coins
+            })
+          })
+          this.setState({
+            challenges: challenges
+          })
+        })
+      }
+
+      renderRow = ({item, index}) => {
+        return (
+          <Card
+                  title={null}
+                  containerStyle={styles.card}
+                >
+                <TouchableOpacity onPress={() => this.onDetailChallenge(challenges)}>
+                <Text style={styles.titleText}>{item.title}</Text>
+                <View style={styles.coinContainer}>
+                <Image source={require("../assets/img/coin.png")} />
+                <Text style={styles.coinText}>{item.coins}</Text>
+                </View>
+                </TouchableOpacity>
+                </Card>
+        )
+      }
     
       componentDidMount() {
-        var self = this;
+        const self = this;
         setTimeout(function () {
             self.setState({ isLoading: false });
         }, 1);
+
       }
       render() {
         return (
@@ -44,31 +84,16 @@ class Feed extends Component {
           <View> 
               
           <FlatList 
-            data={this.state.data}
-            renderItem={({ item: rowData }) =>{
-              return(
-                
-                <Card
-                  title={null}
-                  containerStyle={styles.card}
-                >
-                <TouchableOpacity onPress={() => this.onDetailChallenge(challenges)}>
-                <Text style={styles.titleText}>{rowData.title}</Text>
-                <View style={styles.coinContainer}>
-                <Image source={require("../assets/img/coin.png")} />
-                <Text style={styles.coinText}>{rowData.coins}</Text>
-                </View>
-                </TouchableOpacity>
-                </Card>
-                
-              )
-            }}
+            data={this.state.challenges}
+            renderItem={this.renderRow}
             keyExtractor={(item, index) => index}
           />
           </View>
         )
       }
 }
+
+
 
 const styles = StyleSheet.create({
     card: {

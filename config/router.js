@@ -50,12 +50,12 @@ export const Tabs = TabNavigator({
 });
 
 export const Root = StackNavigator ({
-    Login: {
-        screen: Login,
+    /*Login: {
+    /    screen: Login,
         navigationOptions: {
             header: null
         }
-    },
+    },*/
     Tabs: {
         screen: Tabs,
         navigationOptions: {

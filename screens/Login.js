@@ -4,6 +4,7 @@ import * as firebase from 'firebase';
 import { Root, Tabs } from '../config/router';
 import { Input } from '../components/Input';
 import { Button } from '../components/Button';
+import { firebaseInit } from '../config/firebaseconfig';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -18,16 +19,7 @@ export default class Login extends React.Component {
 
 
   componentWillMount() {
-    const firebaseConfig = {
-      apiKey: "AIzaSyCTc6-IT_V_Y8k7Yqpib876WXVkD4yhLDM",
-      authDomain: "kig-app-17e67.firebaseapp.com",
-      databaseURL: "https://kig-app-17e67.firebaseio.com",
-      projectId: "kig-app-17e67",
-      storageBucket: "kig-app-17e67.appspot.com",
-      messagingSenderId: "562819550250"
-    }
-    
-    firebase.initializeApp(firebaseConfig);
+    this.firebaseInit;
   }
 
   componenetDidMount() {
