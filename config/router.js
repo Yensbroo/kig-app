@@ -1,8 +1,10 @@
 import React from 'react';
+import * as firebase from 'firebase';
 import { Image } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { firebaseInit } from '../config/firebaseconfig';
 import Login from '../screens/Login';
 import Feed from '../screens/Home';
 import Friends from '../screens/Friends';
@@ -13,13 +15,13 @@ export const FeedStack = StackNavigator({
     Home: {
         screen: Feed,
         navigationOptions: {
-            headerMode: 'screen'
+            headerMode: 'screen',
+            headerLeft: null
         },
     },
     ChallengeDetails: {
         screen: ChallengeDetail,
         navigationOptions: ({ navigation }) => ({
-            
         })
     }
 })
@@ -50,17 +52,18 @@ export const Tabs = TabNavigator({
 });
 
 export const Root = StackNavigator ({
-    /*Login: {
-    /    screen: Login,
+    Login: {
+      screen: Login,
         navigationOptions: {
             header: null
         }
-    },*/
+    },
     Tabs: {
         screen: Tabs,
         navigationOptions: {
             headerTitle: 'KIG',
             headerMode: 'none',
+            header: null,
             headerLeft: null,
             gesturesEnabled: false
         }

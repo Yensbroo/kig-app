@@ -27,8 +27,8 @@ class Feed extends Component {
         }
       }
 
-      onDetailChallenge = (challenges) => {
-          this.props.navigation.navigate('ChallengeDetails', {...challenges});
+      onDetailChallenge = (challenge) => {
+          this.props.navigation.navigate('ChallengeDetails', {...challenge});
       }
 
       componentWillMount() {
@@ -53,18 +53,22 @@ class Feed extends Component {
 
       renderRow = ({item, index}) => {
         return (
-          <Card
+       challenges.map((challenge) => {
+         console.log(challenge);
+         return (
+        <Card
                   title={null}
                   containerStyle={styles.card}
                 >
-                <TouchableOpacity onPress={() => this.onDetailChallenge(challenges)}>
-                <Text style={styles.titleText}>{item.title}</Text>
+                <TouchableOpacity onPress={() => this.onDetailChallenge(challenge)}>
+                <Text style={styles.titleText}>{challenge.title}</Text>
                 <View style={styles.coinContainer}>
                 <Image source={require("../assets/img/coin.png")} />
-                <Text style={styles.coinText}>{item.coins}</Text>
+                <Text style={styles.coinText}>{challenge.coins}</Text>
                 </View>
                 </TouchableOpacity>
                 </Card>
+       )})
         )
       }
     

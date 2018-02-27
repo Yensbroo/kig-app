@@ -24,11 +24,11 @@ class ChallengeDetail extends Component {
                   containerStyle={styles.card}
                 >
                 <TouchableOpacity>
-                <Text style={styles.titleText}>FairTrade</Text>
-                <Text style={styles.descText}>Koop een maand lang duurzame producten en merken.</Text>
+                <Text style={styles.titleText}>{title}</Text>
+                <Text style={styles.descText}>{descr}</Text>
                 <View style={styles.coinContainer}>
                 <Image source={require("../assets/img/coin.png")} />
-                <Text style={styles.coinText}>15</Text>
+                <Text style={styles.coinText}>{coins}</Text>
                 <Button style={styles.button}>Accept this challenge</Button>
                 </View>
                 </TouchableOpacity>

@@ -10,39 +10,30 @@ export default class Login extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      firstName: '',
+      lastName: '',
       email: '',
       password: '',
       error: '',
       authenticating: false,
     }
-    
   }
 
 
   componentWillMount() {
     this.firebaseInit;
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        this.props.navigation.navigate('Home');
-      }
-    })
   }
 
   componentDidMount() {
-      this.authSubscription = firebase.auth().onAuthStateChanged((user) => {
-        this.setState({
-          authenticating: false,
-          user,
-        })
-      })
+      this._loadInitialState().done
   }
 
-  onPressSignIn() {
+  onPressSignUp() {
     this.setState({
       authenticating: true,
     })
     const { email, password } = this.state;
-    firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
         this.setState({authenticating: false});
         this.props.navigation.navigate('Tabs');
     })
@@ -61,7 +52,17 @@ export default class Login extends React.Component {
     }
     return (
       <View style={styles.form}>
-      <Text style={styles.loginText}>LOGIN</Text>
+      <Text style={styles.loginText}>REGISTER</Text>
+        <Input 
+          placeholder='First name'
+          label='firstName'
+          onChangeText={firstName => this.setState({ firstName })}
+        />
+        <Input 
+          placeholder='Last name'
+          label='lastName'
+          onChangeText={lastName => this.setState({ lastName })}
+        />
         <Input 
           placeholder='Enter your email...'
           label='Email'
@@ -75,7 +76,7 @@ export default class Login extends React.Component {
           value={this.state.password}
         />
         <Text>{this.state.error}</Text>
-        <Button onPress={() => this.onPressSignIn()}>Log In</Button>
+        <Button onPress={() => this.onPressSignUp()}>Sign Up</Button>
       </View>
     )
   }
