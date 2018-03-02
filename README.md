@@ -15,4 +15,5 @@ The Keep It Green app is a mobile application made for people who want to live a
 ### How to install
 ```Yarn 
 Yarn install
+Yarn start
 ```
