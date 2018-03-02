@@ -13,3 +13,6 @@ The Keep It Green app is a mobile application made for people who want to live a
 * Google Firebase
 
 ### How to install
+```Yarn 
+Yarn install
+```
