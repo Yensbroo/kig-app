@@ -10,6 +10,7 @@ import Feed from '../screens/Home';
 import Friends from '../screens/Friends';
 import Rewards from '../screens/Rewards';
 import ChallengeDetail from '../screens/ChallengeDetail';
+import ProfilePage from '../screens/ProfilePage';
 
 export const FeedStack = StackNavigator({
     Home: {
@@ -46,8 +47,14 @@ export const Tabs = TabNavigator({
         navigationOptions: {
             tabBarLabel: 'Rewards',
             tabBarIcon: ({ tintColor }) => <Icon name="trophy" size={25} color={tintColor}/>,
-        },
-        
+        }
+    },
+    ProfilePage: {
+        screen: ProfilePage,
+        navigationOptions: {
+            tabBarLabel: 'Profile',
+            tabBarIcon: ({ tintColor }) => <Icon name="trophy" size={25} color={tintColor}/>,
+        }
     },
 });
 
