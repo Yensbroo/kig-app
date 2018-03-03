@@ -10,7 +10,7 @@ import {
 
 
 
-export default class ProfilePage extends Component {
+export default class ProfileHeader extends Component {
   render() {
     return (
         <ImageBackground style={styles.headerBackground} source={require('../assets/img/header.png')} >
@@ -33,7 +33,8 @@ export default class ProfilePage extends Component {
 const styles = StyleSheet.create({
     headerBackground:{
         height: 150,
-        width: 350,
+        width: 375,
+        marginLeft:-8,
         
         alignSelf:'stretch'
     },

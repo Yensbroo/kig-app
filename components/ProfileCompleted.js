@@ -6,7 +6,7 @@ import {
     View, 
     Button } from 'react-native';
 
-export default class ProfilePage extends Component {
+export default class ProfileCompleted extends Component {
 
     constructor(){
         
@@ -14,7 +14,7 @@ export default class ProfilePage extends Component {
         
            this.state ={
         
-             status:true
+             status:false
         
            }
          }

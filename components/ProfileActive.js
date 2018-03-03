@@ -6,7 +6,7 @@ import {
     View, 
     Button } from 'react-native';
 
-export default class ProfilePage extends Component {
+export default class ProfilActive extends Component {
 
     constructor(){
         
@@ -14,7 +14,7 @@ export default class ProfilePage extends Component {
         
            this.state ={
         
-             status:true
+             status:false
         
            }
          }
@@ -53,7 +53,7 @@ export default class ProfilePage extends Component {
 const styles = StyleSheet.create({
     MainContainer :{
         
-       // Setting up View inside content in Vertically center.
+      
        justifyContent: 'center',
        flex:1,
        margin: 10

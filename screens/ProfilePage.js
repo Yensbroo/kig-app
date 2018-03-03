@@ -30,7 +30,7 @@ export default class ProfilePage extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#000'
+        backgroundColor: 'silvers',
     }
 });
 
