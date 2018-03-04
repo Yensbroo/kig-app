@@ -38,35 +38,50 @@ class ChallengeDetail extends Component {
 }
 
 const styles = StyleSheet.create({
-    card: {
-        height: 350,
-        marginBottom: 10,
-    },
-    titleText: {
-        fontSize: 34,
-        marginTop: 40,
-        color: '#60D5C7',
-    },
-    descText: {
-        marginTop: 20,
-        marginBottom: 20,
-        fontSize: 18
-    },
-    coinText: {
-        color: '#EAE466',
-        fontSize: 18,
-
-    },
-    coinContainer: {
-        marginBottom: 30,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-    },
-    button: {
-        backgroundColor: '#60D5C7',
-        marginTop: 40
-    }
-})
+        card: {
+            height: 350,
+            marginBottom: 10,
+            backgroundColor: 'lightgreen',
+            borderRadius: 20,
+        },
+        titleText: {
+            marginLeft: 15,
+            fontSize: 34,
+            marginTop: 40,
+            color: '#60D5C7',
+        },
+        descText: {
+            marginLeft: 15,
+            marginTop: 20,
+            marginRight: 15,
+            lineHeight: 30,
+            marginBottom: 30,
+            fontSize: 25,
+            color: '#FFFFFF',
+            fontWeight: 'bold',
+        },
+        coinText: {
+            color: '#EAE466',
+            fontSize: 18,
+    
+        },
+        coinContainer: {
+            marginBottom: 30,
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+        },
+        button: {
+            borderRadius: 20,
+            color: '#CECECE',
+            backgroundColor: '#FFFFFF',
+            marginTop: 40
+        },
+        hyperlink: {
+            textAlign: 'center',
+            color: '#CECECE',
+            fontSize: 2,
+        }
+    })
 
 
 
