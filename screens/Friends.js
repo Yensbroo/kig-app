@@ -11,6 +11,7 @@ import {
 import { List, ListItem } from 'react-native-elements';
 import Head from '../components/header';
 import { friends } from '../config/friends';
+import { firebaseInit } from '../config/firebaseconfig';
 
 class Friends extends Component {
     constructor(props) {
@@ -20,9 +21,28 @@ class Friends extends Component {
         });
         this.state = {
           isLoading: true,
-          data: friends
+          friends: {}
 
         }
+      }
+
+      componentWillMount() {
+        this.getFriends();
+      }
+
+      getFriends = () => {
+          const friends = [];
+
+          firebaseInit.database().ref('friends').on('value', (snap) => {
+            snap.forEach((child) => {
+              friends.push({
+                name: child.val().name,
+              })
+            })
+            this.setState({
+                friends: friends
+            })
+          })
       }
     render() {
         return (

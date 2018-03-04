@@ -53,7 +53,7 @@ export const Tabs = TabNavigator({
         screen: ProfilePage,
         navigationOptions: {
             tabBarLabel: 'Profile',
-            tabBarIcon: ({ tintColor }) => <Icon name="trophy" size={25} color={tintColor}/>,
+            tabBarIcon: ({ tintColor }) => <Icon name="user" size={25} color={tintColor}/>,
         }
     },
 });
