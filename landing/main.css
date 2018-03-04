@@ -1,0 +1,58 @@
+body{
+	height: 150vh;
+	 margin: 0px;
+	 background: linear-gradient(#2AEA76, #00C2F9);
+}
+
+h1,
+h2,
+h3{
+	font-family: Helvetica;
+	color: white;
+	margin-bottom: 10px;
+}
+.content{
+	margin-top: 200px;
+	margin-left: 350px;
+}
+h1{
+font-size: 100px;
+}
+
+h2{
+	font-size: 30px;
+}
+
+img {
+	margin-top: 30px;
+	height: 40px;
+	width: auto;
+}
+.aboutTheApp{
+	top: 85vh;
+	position: absolute;
+}
+.mockup{
+	position: absolute;
+	height: 300px;
+	width: auto;
+}
+
+.m1{
+	left: 400px;
+}
+.m2{
+	top: 100px;
+	left: 600px;
+}
+.m3{
+	top: 200px;
+	left: 800px;
+}
+
+h3{
+	font-family: helvetica;
+	font-weight: normal;
+	margin-left: 805px;
+	margin-top: 130px;
+}
