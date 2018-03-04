@@ -51,6 +51,20 @@ export default class Login extends React.Component {
     })
   }
 
+  onPressSignUp() {
+    this.setState({
+      authenticating: true,
+    })
+    const { email, password } = this.state;
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
+        this.setState({authenticating: false});
+        this.props.navigation.navigate('Tabs');
+    })
+    .catch(() => {
+        this.setState({error: 'Authentication failed', authenticating: false});
+    })
+  }
+
   renderCurrentState() {
     if(this.state.authenticating) {
       return (
@@ -76,6 +90,7 @@ export default class Login extends React.Component {
         />
         <Text>{this.state.error}</Text>
         <Button onPress={() => this.onPressSignIn()}>Log In</Button>
+        <Button onPress={() => this.onPressSignUp()}>Sign Up</Button>
       </View>
     )
   }
