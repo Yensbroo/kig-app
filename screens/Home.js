@@ -100,25 +100,34 @@ class Feed extends Component {
 
 
 const styles = StyleSheet.create({
-    card: {
-        height: 162,
-        marginBottom: 10,
-    },
-    titleText: {
-        fontSize: 24,
-        marginTop: 20,
-        color: '#60D5C7',
-    },
-    coinText: {
-        color: '#EAE466',
-        fontSize: 18,
+  
+  MainContainer: {
+    backgroundColor: 'white',
 
-    },
-    coinContainer: {
-        marginTop: 30,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        }
+  },
+  card: {
+
+      height: 162,
+      marginBottom: 10,
+      borderRadius:20,
+  },
+ 
+  titleText: {
+      fontSize: 24,
+      marginTop: 20,
+      color: '#60D5C7',
+  },
+  coinText: {
+      color: '#EAE466',
+      fontSize: 18,
+
+  },
+
+  coinContainer: {
+      marginTop: 30,
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      }
 })
 
 

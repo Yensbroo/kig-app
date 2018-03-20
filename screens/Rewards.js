@@ -68,24 +68,40 @@ class Rewards extends Component {
 
 const styles = StyleSheet.create({
     card: {
-        height: 180,
+        backgroundColor: 'lightgreen',
+        height: 120,
         marginBottom: 10,
+        borderRadius: 20,
+    },
+    grid: {
+      height: 120,
+
     },
     titleText: {
         fontSize: 18,
         marginTop: 20,
-        color: '#60D5C7',
+        color: 'white',
+        fontWeight: 'bold',
     },
     coinText: {
-        color: '#EAE466',
+        color: 'white',
         fontSize: 18,
+        marginTop: 3,
+        fontWeight: 'bold',
 
     },
+    button: {
+        borderRadius: 20,
+        color: '#CECECE',
+        backgroundColor: '#FFFFFF',
+        paddingBottom: 10,
+    },
     coinContainer: {
-        marginTop: 30,
+        marginTop: 10,
         flexDirection: 'row',
         flexWrap: 'wrap',
-        }
+        },
+
 })
 
 
